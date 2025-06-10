@@ -45,8 +45,10 @@ jobs:
   sast:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: snyk/actions/setup@master
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Snyk ass
+        uses: snyk/actions/setup@master
       - name: Snyk Test
         run: snyk test
         continue-on-error: true
