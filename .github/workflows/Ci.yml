@@ -34,7 +34,7 @@ jobs:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2
         with:
-          publish-dir: ./dist # или ваша папка билда
+          publish-dir: ./build # или ваша папка билда
           production-deploy: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
@@ -76,7 +76,7 @@ jobs:
         uses: gitleaks/gitleaks-action@v2
 
       - name: Scan image with Trivy
-        uses: aquasecurity/trivy-action@v0.30.0
+        uses: aquasecurity/trivy-action@v0.29.0
         with:
           image-ref: local-image:latest
           format: "table"
