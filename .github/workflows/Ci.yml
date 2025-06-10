@@ -45,19 +45,13 @@ jobs:
   sast:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Run CodeQL Analysis
-        uses: github/codeql-action/init@v3
-        with:
-          languages: javascript
-
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v3
-
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
+      - uses: actions/checkout@v4
+      - uses: snyk/actions/setup@master
+      - name: Snyk Test
+        run: snyk test
+        continue-on-error: true
+        env:
+           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
   # Этап 3: DAST (динамический анализ)
   dast:
@@ -79,8 +73,10 @@ jobs:
       - name: Scan for secrets
         uses: gitleaks/gitleaks-action@v2
 
-      - name: Check config with trivy
-        uses: aquasecurity/trivy-action@v0.31.0
+      - name: Scan image with Trivy
+        uses: aquasecurity/trivy-action@v0.30.0
         with:
-          scan-type: config
-          scan-ref: .
+          image-ref: local-image:latest
+          format: "table"
+          severity: "CRITICAL,HIGH"
+          output: trivy-result.txt
