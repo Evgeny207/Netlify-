@@ -36,12 +36,13 @@ jobs:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2
         with:
-          publish-dir: ./packages # или ваша папка билда
-          production-deploy: true
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy from GitHub Actions"
-          netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
+           publish-dir: ./packages
+           production-deploy: true
+           github-token: ${{ secrets.GITHUB_TOKEN }}
+           deploy-message: Deploy from GitHub Actions
+           netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+           netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
+
 
   # Этап 2: SAST (статический анализ)
   sast:
