@@ -62,7 +62,7 @@ const stats = () => {
   };
 };
 
-const umdPath = path.resolve(process.cwd(), 'dist');
+const umdPath = path.resolve(_dirname, 'dist');
 const umdDirPath = path.resolve(process.cwd(), 'dist/umd');
 const cjsPath = path.resolve(process.cwd(), 'dist/cjs');
 const targetOutputs = () => {
