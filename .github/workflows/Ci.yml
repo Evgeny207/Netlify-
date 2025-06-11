@@ -28,9 +28,9 @@ jobs:
         run: npm test
 
       - name: Build project
-        run: npm run build
-      - name: Catalog
-        run: ls -R
+        run: npm install && npm run build
+      - name: Check if dist exists
+        run: ls -la ./dist
 
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v3
