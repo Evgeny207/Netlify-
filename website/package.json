@@ -15,7 +15,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "dayjs": "^1.8.23",
+    "dayjs": "^1.11.13",
     "emotion-theming": "^10.0.27",
     "gatsby": "2.23.7",
     "gatsby-plugin-catch-links": "2.3.5",
