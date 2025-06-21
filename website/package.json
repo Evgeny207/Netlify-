@@ -28,7 +28,7 @@
     "gatsby-remark-prismjs": "3.5.4",
     "gatsby-source-filesystem": "2.3.12",
     "gatsby-transformer-json": "2.4.5",
-    "gatsby-transformer-remark": "2.8.17",
+    "gatsby-transformer-remark": "2.16.1",
     "gatsby-transformer-yaml": "2.4.4",
     "js-yaml": "^3.13.1",
     "lodash": "^4.17.15",
